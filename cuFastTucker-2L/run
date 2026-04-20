@@ -1,0 +1,4 @@
+#!/bin/bash
+nvcc -o main main.cu tools.cpp kernel.cu -lcurand -lcublas -lcusolver -L /usr/local/cuda/lib64 -gencode arch=compute_86,code=sm_86
+
+./main ./data/Movielens.train.index.bin ./data/Movielens.train.value.bin ./data/Movielens.test.index.bin ./data/Movielens.test.value.bin 3 6040 3706 96 990252 9956 3.751743 32 32 50 0.05 0.05 0.01
